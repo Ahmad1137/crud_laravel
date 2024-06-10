@@ -24,4 +24,4 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //add emplyee
-Route::get('/add', [EmployeeController::class, 'add'])->name('home');
+Route::get('/add', [EmployeeController::class, 'add'])->name('add');

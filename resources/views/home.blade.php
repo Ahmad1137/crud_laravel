@@ -20,7 +20,7 @@
         @endif
         <div class="card">
             <div class="card-header">{{ __('Employee Table') }}
-                <a href="{{ route('add')}}" class="btn btn-primary" style="margin-right: 10px;">
+                <a href="{{ route('employeeform')}}" class="btn btn-primary" style="margin-right: 10px;">
                     {{ __('Add Data') }}
                 </a>
             </div>
@@ -37,10 +37,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if(session('msg'))
-                                 <p class="alert alert-danger">{{ session('msg') }}</p>
-                        @endif
-                        
                         <!-- Add table rows here -->
                          @foreach ($empdataz as $empsdata)
                         <tr>

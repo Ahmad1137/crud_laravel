@@ -20,7 +20,7 @@
             {{ __('Add Employee') }}
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('employee.store')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('employeeform')}}" enctype="multipart/form-data">
                 @csrf <!-- Include CSRF token for security -->
                 
                 <div class="mb-3">

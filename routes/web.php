@@ -22,5 +22,6 @@ Route::get('/', function () {
 Auth::routes();
 //Emplyee Crud
 Route::get('/home', [EmployeeController::class, 'index'])->name('home');
-Route::get('/add', [EmployeeController::class, 'add'])->name('add');
-Route::post('/employeeform', [EmployeeController::class, 'store'])->name('employee.store');
+Route::get('/employeeform', [EmployeeController::class, 'add'])->name('add');
+
+Route::post('/employeeform', [EmployeeController::class, 'store'])->name('employeeform');

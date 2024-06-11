@@ -20,12 +20,12 @@
             {{ __('Add Employee') }}
         </div>
         <div class="card-body">
-            <form method="POST" action="path/to/submit" enctype="multipart/form-data">
+            <form method="POST" action="{{route('employee.store')}}" enctype="multipart/form-data">
                 @csrf <!-- Include CSRF token for security -->
                 
                 <div class="mb-3">
                     <label for="employeeImage" class="form-label">{{ __('Image') }}</label>
-                    <input type="file" class="form-control" id="employeeImage" name="employeeImage" required>
+                    <input type="text" class="form-control" id="employeeImage" name="employeeImage" required>
                 </div>
                 
                 <div class="mb-3">

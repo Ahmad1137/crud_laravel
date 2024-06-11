@@ -15,9 +15,12 @@
 <div class="container">
  <div class="row justify-content-center">
     <div class="col-md-8">
+        @if(session('msg'))
+        <p class="alert alert-success">{{ session('msg') }}</p>
+        @endif
         <div class="card">
             <div class="card-header">{{ __('Employee Table') }}
-                <a href="{{ url('add')}}" class="btn btn-primary" style="margin-right: 10px;">
+                <a href="{{ route('add')}}" class="btn btn-primary" style="margin-right: 10px;">
                     {{ __('Add Data') }}
                 </a>
             </div>
@@ -34,13 +37,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @if(session('msg'))
+                                 <p class="alert alert-danger">{{ session('msg') }}</p>
+                        @endif
+                        
                         <!-- Add table rows here -->
+                         @foreach ($empdataz as $empsdata)
                         <tr>
-                            <td><img src="path/to/image.jpg" alt="Employee Image" style="width: 50px; height: auto;"></td>
-                            <td>John Doe</td>
-                            <td>Software Engineer</td>
-                            <td>(123) 456-7890</td>
+                             
+                            <td>{{$empsdata->employeeImag}}</td>
+                            <td>{{$empsdata->employeeName}}</td>
+                            <td>{{$empsdata->employeeDesignation}}</td>
+                            <td>{{$empsdata->employeePhoneNumber}}</td>
+                         
+                         
                         </tr>
+                        @endforeach
+                       
                         <!-- Repeat above <tr> block for additional employees -->
                     </tbody>
                 </table>

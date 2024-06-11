@@ -20,8 +20,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-//add emplyee
+//Emplyee Crud
+Route::get('/home', [EmployeeController::class, 'index'])->name('home');
 Route::get('/add', [EmployeeController::class, 'add'])->name('add');
+Route::post('/employeeform', [EmployeeController::class, 'store'])->name('employee.store');

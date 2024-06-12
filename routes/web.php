@@ -27,3 +27,4 @@ Route::get('/employeeform', [EmployeeController::class, 'add'])->name('add');
 Route::post('/employeedata', [EmployeeController::class, 'store'])->name('employeedata');
 Route::get('/delete/{id}',[EmployeeController::class, 'delete']);
 Route::get('/edit/{id}',[EmployeeController::class, 'edit']);
+Route::post('/update/{id}',[EmployeeController::class, 'update']);

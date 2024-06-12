@@ -18,9 +18,12 @@
         @if(session('msg'))
         <p class="alert alert-success">{{ session('msg') }}</p>
         @endif
+          @if(session('alert'))
+        <p class="alert alert-danger">{{ session('alert') }}</p>
+        @endif
         <div class="card">
             <div class="card-header">{{ __('Employee Table') }}
-                <a href="{{ route('employeeform')}}" class="btn btn-primary" style="margin-right: 10px;">
+                <a href="{{ url('/employeeform')}}" class="btn btn-primary" style="margin-right: 10px;">
                     {{ __('Add Data') }}
                 </a>
             </div>
@@ -34,6 +37,7 @@
                             <th scope="col">{{ __('Name') }}</th>
                             <th scope="col">{{ __('Designation') }}</th>
                             <th scope="col">{{ __('Phone Number') }}</th>
+                            <th scope="col">{{ __('Action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,7 +49,11 @@
                             <td>{{$empsdata->employeeName}}</td>
                             <td>{{$empsdata->employeeDesignation}}</td>
                             <td>{{$empsdata->employeePhoneNumber}}</td>
-                         
+                            <td>
+                                <a href="{{url('/edit/' . $empsdata->id)}}" class="btn btn-success">Edit</a>
+                                <a href="{{ url('/delete/' . $empsdata->id) }}"class="btn btn-danger">Delete</a>
+
+                            </td>
                          
                         </tr>
                         @endforeach

@@ -34,4 +34,15 @@ class EmployeeController extends Controller
 
         return redirect('home')->with('msg', 'Data Saved Successfully');
     }
+    public function delete($id)
+    {
+        DB::table('employees')->where('id', $id)->delete();
+        return redirect('home')->with('alert', 'Data Deleted Successfully');
+    }
+    public function edit($id)
+    {
+        $empdata=DB::table('employees')->where('id',$id)->first();
+        //  dd($empdata);
+        return view('edit',compact('empdata'));
+    }
 }

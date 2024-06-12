@@ -17,7 +17,7 @@
    <div class="col-md-8">
     <div class="card">
         <div class="card-header">
-            {{ __('Add Employee') }}
+            {{ __('Update Employee') }}
         </div>
         <div class="card-body">
             <form method="POST" action="{{url('/employeedata')}}" enctype="multipart/form-data">
@@ -25,22 +25,22 @@
                 
                 <div class="mb-3">
                     <label for="employeeImage" class="form-label">{{ __('Image') }}</label>
-                    <input type="text" class="form-control" id="employeeImage" name="employeeImage" required>
+                    <input type="text" class="form-control" id="employeeImage" name="employeeImage" value="{{$empdata->employeeImag}}" required>
                 </div>
                 
                 <div class="mb-3">
-                    <label for="employeeName" class="form-label">{{ __('Name') }}</label>
-                    <input type="text" class="form-control" id="employeeName" name="employeeName" placeholder="Enter employee name" required>
+                    <label for="employeeImage" class="form-label">{{ __('Name') }}</label>
+                    <input type="text" class="form-control" id="employeeName" name="employeeName" placeholder="Enter employee name" value="{{$empdata->employeeName}}" required>
                 </div>
                 
                 <div class="mb-3">
                     <label for="employeeDesignation" class="form-label">{{ __('Designation') }}</label>
-                    <input type="text" class="form-control" id="employeeDesignation" name="employeeDesignation" placeholder="Enter designation" required>
+                    <input type="text" class="form-control" id="employeeDesignation" name="employeeDesignation" placeholder="Enter designation" value="{{$empdata->employeeDesignation}}" required>
                 </div>
                 
                 <div class="mb-3">
                     <label for="employeePhoneNumber" class="form-label">{{ __('Phone Number') }}</label>
-                    <input type="text" class="form-control" id="employeePhoneNumber" name="employeePhoneNumber" placeholder="Enter phone number" required>
+                    <input type="text" class="form-control" id="employeePhoneNumber" name="employeePhoneNumber" placeholder="Enter phone number" value="{{$empdata->employeePhoneNumber}}"  required>
                 </div>
                 
                 

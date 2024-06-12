@@ -24,4 +24,6 @@ Auth::routes();
 Route::get('/home', [EmployeeController::class, 'index'])->name('home');
 Route::get('/employeeform', [EmployeeController::class, 'add'])->name('add');
 
-Route::post('/employeeform', [EmployeeController::class, 'store'])->name('employeeform');
+Route::post('/employeedata', [EmployeeController::class, 'store'])->name('employeedata');
+Route::get('/delete/{id}',[EmployeeController::class, 'delete']);
+Route::get('/edit/{id}',[EmployeeController::class, 'edit']);

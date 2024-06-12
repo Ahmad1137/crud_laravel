@@ -20,7 +20,8 @@
             {{ __('Update Employee') }}
         </div>
         <div class="card-body">
-            <form method="POST" action="{{url('/update/' . $empdata->id)}}" enctype="multipart/form-data">
+            <form method="POST" action="{{url('/update')}}" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{{$empdata->id}}">
                 @csrf <!-- Include CSRF token for security -->
                 
                 <div class="mb-3">

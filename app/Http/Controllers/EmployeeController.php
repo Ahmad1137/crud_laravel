@@ -43,13 +43,13 @@ class EmployeeController extends Controller
         //  dd($empdata);
         return view('edit',compact('empdata'));
     }
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         
         // Attempt to update the employee record
        
         
-        $empupdate = DB::table('employees')->where('id', $id)->update([
+        $empupdate = DB::table('employees')->where('id', $request->id)->update([
             'employeeName'          => $request->employeeName,
             'employeeImag'         => $request->employeeImage,
             'employeeDesignation'   => $request->employeeDesignation,
